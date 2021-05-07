@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <meta charset="utf-8"/>
+
+  <!-- Page Title Here -->
+  <title>Play-iO | Let's make IIoT more fun</title>
+
+  <!-- Page Description Here -->
+  <meta name="description" content="Play-iO | Let's make IIoT more fun. IIoT as-a-service"/>
+  <meta name="keywords" content="IoT,IIoT,Smart Building,Smart Factory,Smart Agriculture,Smart Transport"/>
+
+  <!-- Disable screen scaling-->
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+  <link rel="shortcut icon" href="img/logo/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="img/logo/favicon-48x48.png"/>
+  <!--<link rel="manifest" href="img/logo/manifest.json"/>-->
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="theme-color" content="#fff"/>
+  <meta name="application-name" content="Play-iO"/>
+  <link rel="apple-touch-icon" sizes="57x57" href="img/logo/apple-touch-icon-57x57.png"/>
+  <link rel="apple-touch-icon" sizes="60x60" href="img/logo/apple-touch-icon-60x60.png"/>
+  <link rel="apple-touch-icon" sizes="72x72" href="img/logo/apple-touch-icon-72x72.png"/>
+  <link rel="apple-touch-icon" sizes="76x76" href="img/logo/apple-touch-icon-76x76.png"/>
+  <link rel="apple-touch-icon" sizes="114x114" href="img/logo/apple-touch-icon-114x114.png"/>
+  <link rel="apple-touch-icon" sizes="120x120" href="img/logo/apple-touch-icon-120x120.png"/>
+  <link rel="apple-touch-icon" sizes="144x144" href="img/logo/apple-touch-icon-144x144.png"/>
+  <link rel="apple-touch-icon" sizes="152x152" href="img/logo/apple-touch-icon-152x152.png"/>
+  <link rel="apple-touch-icon" sizes="167x167" href="img/logo/apple-touch-icon-167x167.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="img/logo/apple-touch-icon-180x180.png"/>
+  <link rel="apple-touch-icon" sizes="1024x1024" href="img/logo/apple-touch-icon-1024x1024.png"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="Play-iO"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="img/logo/apple-touch-startup-image-640x1136.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="img/logo/apple-touch-startup-image-750x1334.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="img/logo/apple-touch-startup-image-828x1792.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+        href="img/logo/apple-touch-startup-image-1125x2436.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+        href="img/logo/apple-touch-startup-image-1242x2208.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+        href="img/logo/apple-touch-startup-image-1242x2688.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="img/logo/apple-touch-startup-image-1536x2048.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="img/logo/apple-touch-startup-image-1668x2224.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="img/logo/apple-touch-startup-image-1668x2388.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="img/logo/apple-touch-startup-image-2048x2732.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="img/logo/apple-touch-startup-image-1620x2160.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="img/logo/apple-touch-startup-image-1136x640.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="img/logo/apple-touch-startup-image-1334x750.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="img/logo/apple-touch-startup-image-1792x828.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+        href="img/logo/apple-touch-startup-image-2436x1125.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+        href="img/logo/apple-touch-startup-image-2208x1242.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+        href="img/logo/apple-touch-startup-image-2688x1242.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="img/logo/apple-touch-startup-image-2048x1536.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="img/logo/apple-touch-startup-image-2224x1668.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="img/logo/apple-touch-startup-image-2388x1668.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="img/logo/apple-touch-startup-image-2732x2048.png"/>
+  <link rel="apple-touch-startup-image"
+        media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="img/logo/apple-touch-startup-image-2160x1620.png"/>
+  <link rel="icon" type="image/png" sizes="228x228" href="img/logo/coast-228x228.png"/>
+  <meta name="msapplication-TileColor" content="#fff"/>
+  <meta name="msapplication-TileImage" content="/img/logo/mstile-144x144.png"/>
+  <meta name="msapplication-config" content="/img/logo/browserconfig.xml"/>
+  <link rel="yandex-tableau-widget" href="img/logo/yandex-browser-manifest.json"/>
+
+  <!-- Initializer -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/normalize.min.css"
+        integrity="sha512-stI6dFNqqOFkPG83D0fOm3+lQu9LUv8ifVdyRrfUIE68MtFPDz/d322WUR9zzgv190m+4e/ovRctOaZN/a53iw=="
+        crossorigin="anonymous"/>
+
+  <!-- Web fonts and Web Icons -->
+  <link rel="stylesheet" href="css/pageloader.css"/>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Vendor CSS style -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/foundation.min.css"
+        integrity="sha512-5J1ctlrD2qaRtPrJcZzV2eDyDEc7K07nVG/WRWsFdXhGez26m078zYTLLUHIUZ0rjx8PKg1LLZIq/2u+YxBadw=="
+        crossorigin="anonymous"/>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.0/jquery.fullPage.min.css"
+        integrity="sha512-+B2HAMs7RX/xsB6WFMHz4DJFF3dx2u43uz3cO8wv90hq4NukQdvu7csyJ9S61zKOcWxpYgh1tJsW6fAs4u4XsA=="
+        crossorigin="anonymous"/>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.css"
+        integrity="sha512-fSKum0u74TzF+eAXxBS0oIp3LlON1gd++1rifA0ZnQWKP2JXbCdomS2k0BDEM7v0se7mQOpOwedRw/lRsSPAaA=="
+        crossorigin="anonymous"/>
+
+  <!-- Main CSS files -->
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/main_responsive.css"/>
+  <link rel="stylesheet" href="css/style-color1.css"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"
+          integrity="sha512-xxwB6MnY5MI87ptYSCYVFmRaYTC9VHOY1sya6oo1QfyN+i1Hmxu/0T3x6bssjMNlNI+WsBDCAlN/TNywKDPlQQ=="
+          crossorigin="anonymous"></script>
+</head>
+<body id="menu" class="alt-bg">
+<!--[if lt IE 8]>
+<p class="browsehappy">
+  You are using an <strong>outdated</strong> browser. Please
+  <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+</p>
+<![endif]-->
+
+<!-- Page Loader -->
+<div class="page-loader" id="page-loader">
+  <div>
+    <span class="mdi mdi-loading mdi-spin"></span>
+    <p>loading</p>
+  </div>
+</div>
+
+<div id="large-header" class="large-header">
+  <canvas id="demo-canvas"></canvas>
+</div><!-- End large-header-->
+
+<!-- BEGIN OF site header Menu -->
+<!-- Add "material" class for a material design style -->
+<header class="header-top">
+  <div class="menu clearfix">
+    <a href="#about-us">about</a>
+
+    <!--<div class="menu-cont">
+      <p class="text">Menu cont</p>
+      <ul class="sub-menu">
+        <li><a href="htp://page">My Page</a></li>
+      </ul>
+    </div>-->
+    <!-- Add other menu similar to "about" here -->
+    <a href="#contact">contact</a>
+  </div>
+</header>
+<!-- END OF site header Menu-->
+
+<!-- BEGIN OF Quick nav icons at left -->
+<nav class="quick-link count-4 nav-left">
+  <div class="logo">
+    <a href="#home">
+      <img src="img/logo/mstile-70x70.png" alt="Play-iO"/>
+    </a>
+  </div>
+  <ul id="qmenu" class="qmenu">
+    <li data-menuanchor="home">
+      <a href="#home" class="">
+        <ion-icon name="home-outline"></ion-icon>
+      </a>
+      <span class="title">Home page</span>
+    </li>
+    <li data-menuanchor="register">
+      <a href="#register">
+        <ion-icon name="create-outline"></ion-icon>
+      </a>
+      <span class="title">Stay in touch</span>
+    </li>
+    <li data-menuanchor="about-us">
+      <a href="#about-us"
+      >
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </a>
+      <span class="title">About Us</span>
+    </li>
+    <!--<li data-menuanchor="contact">
+      <a href="#contact"><ion-icon name="call-outline"></ion-icon>
+      </a>
+      <span class="title">Contact</span>
+    </li>-->
+    <li data-menuanchor="contact">
+      <a href="#contact">
+        <ion-icon name="mail-outline"></ion-icon>
+      </a>
+      <span class="title">Contact</span>
+    </li>
+  </ul>
+</nav>
+<!-- END OF Quick nav icons at left -->
+
+<!-- BEGIN OF site cover -->
+<div class="page-cover" id="s-cover">
+  <!-- Cover Background -->
+  <div class="cover-bg pos-abs full-size bg-img" data-image-src="img/bg.png"></div>
+
+  <!-- BEGIN OF Slideshow Background -->
+  <!--<div class="cover-bg pos-abs full-size slide-show">
+    <i class='img' data-src='./img/bg-slide1.jpg'></i>
+    <i class='img' data-src='./img/bg-slide2.jpg'></i>
+    <i class='img' data-src='./img/bg-slide3.jpg'></i>
+    <i class='img' data-src='./img/bg-slide4.jpg'></i>
+</div>-->
+  <!-- END OF Slideshow Background -->
+
+  <!--BEGIN OF Static video bg  - uncomment below to use Video as Background-->
+  <!--<div id="container" class="video-container show-for-medium-up">
+                    <video autoplay="autoplay" loop="loop" autobuffer="autobuffer" muted="muted"
+                                    width="640" height="360">
+                            <source src="vid/flower_loop.mp4" type="video/mp4">
+                    </video>
+            </div>-->
+  <!--END OF Static video bg-->
+
+  <!-- Solid color as background -->
+  <!--            <div class="cover-bg pos-abs full-size bg-color" data-bgcolor="rgb(59, 59, 59)"></div>-->
+
+  <!-- Solid color as filter -->
+  <div class="cover-bg-mask pos-abs full-size bg-color" data-bgcolor="rgba(0, 0, 0, 0.41)"></div>
+</div>
+<!--END OF site Cover -->
+
+<!-- Begin of timer pane -->
+<div class="pane-when" id="s-when">
+  <div class="content">
+    <!-- Clock -->
+    <div class="clock clock-countdown">
+      <div class="site-config" data-date="01/01/2022 00:00:00" data-date-timezone="+7"></div>
+      <div class="elem-center">
+        <div class="digit">
+          <span class="days">00</span>
+          <span class="txt">days</span>
+        </div>
+      </div>
+      <!-- Logo instead -->
+      <!--
+                <div class="logo">
+                    <a href="#">
+                        <img src="./img/logo_only.png">
+                    </a>
+                </div>
+-->
+
+      <div class="elem-bottom">
+        <div class="deco"></div>
+
+        <!--						<span class="days">12</span><span class="thin">D</span>-->
+        <span class="hours">00</span><span class="thin">H</span>
+        <span class="minutes">00</span><span class="thin">m</span>
+        <span class="seconds">00</span><span class="thin">s</span>
+        <span class="tz"></span><span class="thin">+07</span>
+      </div>
+    </div>
+
+    <footer>
+      <p>Before we launch our <strong>new website</strong></p>
+    </footer>
+  </div>
+</div>
+<!-- End of timer pane -->
+
+<!-- BEGIN OF site main content content here -->
+<main class="page-main" id="mainpage">
+  <!-- Begin of home page -->
+  <div class="section page-home page page-cent" id="s-home">
+    <!-- Logo -->
+    <!--<div class="logo-container">
+      <img class="h-logo" src="./img/logo_only.png" alt="Logo">
+    </div>-->
+    <!-- Content -->
+    <section class="content">
+      <header class="header">
+        <div class="h-left">
+          <h2>New <strong>Innovation</strong></h2>
+        </div>
+        <div class="h-right">
+          <h3>Industry IoT <br/><span>Software & Hardware</span></h3>
+          <h4 class="subhead">
+            <a href="#register">Available here soon</a>
+          </h4>
+        </div>
+      </header>
+    </section>
+
+    <!-- Scroll down button -->
+    <footer class="p-footer p-scrolldown">
+      <a href="#register">
+        <div class="arrow-d">
+          <div class="before">Scroll</div>
+          <div class="after">Down</div>
+          <div class="circle">
+            <ion-icon name="finger-print-outline"></ion-icon>
+          </div>
+        </div>
+      </a>
+    </footer>
+  </div>
+  <!-- End of home page -->
+
+  <!-- Begin of register page -->
+  <div class="section page-register page page-cent" id="s-register">
+    <section class="content">
+      <header class="p-title">
+        <h3>Register
+          <ion-icon name="create-outline"></ion-icon>
+        </h3>
+        <h4 class="subhead">Register to get our latest news</h4>
+      </header>
+      <div>
+        <!-- TODO: Link-->
+        <form id="mail-subscription" class="form magic send_email_form" method="get" action="">
+          <p class="invite">
+            Please, write your email below to stay in touch with us :
+          </p>
+          <div class="fields clearfix">
+            <div class="input">
+              <label for="reg-email">Email </label>
+              <input id="reg-email" class="email_f" name="email" type="email" required
+                     placeholder="your@email.address" data-validation-type="email"/>
+            </div>
+            <div class="buttons">
+              <button id="submit-email" class="button email_b" name="submit_email"> Ok</button>
+            </div>
+          </div>
+
+          <p class="email-ok invisible">
+            <strong>Thank you</strong> for your subscription. We will inform you.
+          </p>
+        </form>
+      </div>
+    </section>
+    <footer class="p-footer p-scrolldown">
+      <a href="#about-us">
+        <div class="arrow-d">
+          <div class="before">About</div>
+          <div class="after">PlayiO</div>
+          <div class="circle">
+            <ion-icon name="finger-print-outline"></ion-icon>
+          </div>
+        </div>
+      </a>
+    </footer>
+  </div>
+  <!-- End of register page -->
+
+  <!-- Begin of about us page -->
+  <div class="section page-about page page-cent" id="s-about-us">
+    <section class="content">
+      <header class="p-title">
+        <h3>About Us
+          <ion-icon name="information-circle-outline"></ion-icon>
+        </h3>
+        <h4 class="subhead">
+          Let's make IIoT more fun
+        </h4>
+      </header>
+      <article class="text">
+        <p>
+          <span class="text-yellow text-bold">Play-iO</span> is an <strong>open-source </strong>IoT ecosystem from edge device to
+          cloud, focus on <strong>Cyber Security</strong>, <strong>Digital Twins</strong>,
+          <strong>Real-Time-Series data</strong>, <strong>Continuous Provision & Improvement</strong>,
+          <strong>Data Trend Analytic</strong>, and <strong>AI Decision-Making</strong>.
+        </p>
+        <p>
+          We provides a ready solution that enables a bridge from legacy system to <strong>IoT cloud</strong>.
+          <span class="text-yellow text-bold">Play-iO</span> is flexible for innovating a wide business range in
+          <strong>Building Management System</strong>, <strong>Smart City</strong>, <strong>Industrial Automation</strong> and <strong>Agriculture</strong>.
+        </p>
+      </article>
+    </section>
+    <footer class="p-footer p-scrolldown">
+      <a href="#contact">
+        <div class="arrow-d">
+          <div class="before">Contact</div>
+          <div class="after">Message</div>
+          <div class="circle">
+            <ion-icon name="finger-print-outline"></ion-icon>
+          </div>
+        </div>
+      </a>
+    </footer>
+  </div>
+  <!-- End of about us page -->
+
+  <!-- Begin of Contact page   -->
+  <div class="section page-contact page page-cent bg-color" data-bgcolor="rgba(95, 25, 208, 0.88)s" id="s-contact">
+    <!-- Begin of contact information -->
+    <div class="slide" id="s-information" data-anchor="information">
+      <section class="content">
+        <header class="p-title">
+          <h3>Contact
+            <ion-icon name="location-outline"></ion-icon>
+          </h3>
+          <ul class="buttons">
+            <li class="show-for-medium-up">
+              <a title="About" href="#about-us">
+                <ion-icon name="information-circle-outline" size="large"></ion-icon>
+              </a>
+            </li>
+            <!--<li>
+                                <a title="Contact" href="#contact/information"><ion-icon name="location-outline"></ion-icon></a>
+                            </li>-->
+            <li>
+              <a title="Message" href="#contact/message">
+                <ion-icon name="mail-outline" size="large"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </header>
+        <!-- Begin Of Page SubSction -->
+        <div class="contact">
+          <div class="row">
+            <div class="medium-6 columns left">
+              <ul>
+                <li>
+                  <h4>Email</h4>
+                  <p>
+                    <a class="text-yellow"
+                       href="mailto://info@playio.cloud">info@playio.cloud</a>
+                  </p>
+                </li>
+                <li>
+                  <h4>Address</h4>
+                  <p>Hanoi <br/>Vietnam</p>
+                </li>
+                <li>
+                  <h4>Phone</h4>
+                  <p>+084 09xx xxx xxx</p>
+                </li>
+              </ul>
+            </div>
+            <div class="medium-6 columns social-links right">
+              <ul>
+                <!-- legal notice -->
+                <li class="show-for-medium-up">
+                  <h4>Website</h4>
+                  <p>
+                    <a class="text-yellow" href="https://playio.cloud">playio.cloud</a>
+                  </p>
+                </li>
+                <li class="show-for-medium-up">
+                  <h4>Find us on</h4>
+                  <!-- Begin of Social links -->
+                  <div class="socialnet">
+                    <a href="https://github.com/play-iot" target="_blank">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                    <a href="https://hub.docker.com/u/playio" target="_blank">
+                      <ion-icon name="logo-docker"></ion-icon>
+                    </a>
+                    <a href="#">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="#">
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                    <a href="#">
+                      <ion-icon name="logo-slack"></ion-icon>
+                    </a>
+                  </div>
+                  <!-- End of Social links -->
+                </li>
+                <li>
+                  <p>
+                    <img src="img/logo/android-chrome-512x512.png" alt="Logo" class="logo"/>
+                  </p>
+                  <p class="small">
+                    Adiós by <strong><a class="text-yellow" href="https://playio.cloud">Play-iO</a></strong>.
+                    All right reserved 2021
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- End of page SubSection -->
+      </section>
+    </div>
+    <!-- end of contact information -->
+
+    <!-- begin of contact message -->
+    <div class="slide" id="s-message" data-anchor="message">
+      <section class="content">
+        <header class="p-title">
+          <h3>Write to us
+            <ion-icon name="mail-outline"></ion-icon>
+          </h3>
+          <ul class="buttons">
+            <li class="show-for-medium-up">
+              <a title="About" href="#about-us">
+                <ion-icon name="information-circle-outline" size="large"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a title="Contact" href="#contact/information">
+                <ion-icon name="location-outline" size="large"></ion-icon>
+              </a>
+            </li>
+            <!--<li>
+              <a title="Message" href="#contact/message"><ion-icon name="mail-outline" size="large"></ion-icon></a>
+            </li>-->
+          </ul>
+        </header>
+        <!-- Begin Of Page SubSction -->
+
+        <div class="page-block c-right v-zoomIn">
+          <div class="wrapper">
+            <div>
+              <form class="message form send_message_form" method="get" action="">
+                <div class="fields clearfix">
+                  <div class="input">
+                    <label for="mes-name">Name </label>
+                    <input id="mes-name" name="name" type="text" placeholder="Your Name" required/>
+                  </div>
+                  <div class="buttons">
+                    <button id="submit-message" class="button email_b" name="submit_message"> Ok</button>
+                  </div>
+                </div>
+                <div class="fields clearfix">
+                  <div class="input">
+                    <label for="mes-email">Email </label>
+                    <input id="mes-email" type="email" placeholder="Email Address" name="email" required/>
+                  </div>
+                </div>
+                <div class="fields clearfix no-border">
+                  <label for="mes-text">Message </label>
+                  <textarea id="mes-text" placeholder="Message ..." name="message" required></textarea>
+                  <div>
+                    <p class="message-ok invisible">Your message has been sent, thank you.</p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- End Of Page SubSction -->
+      </section>
+    </div>
+    <!-- End of contact message -->
+  </div>
+  <!-- End of Contact page  -->
+</main>
+
+<!-- END OF site main content content here -->
+
+<!-- Begin of site footer -->
+<footer class="page-footer">
+  <div>
+    <a href="https://github.com/play-iot" target="_blank">
+      <ion-icon name="logo-github"></ion-icon>
+    </a>
+    <a href="" target="">
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+    <a href="" target="">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </a>
+  </div>
+</footer>
+<!-- End of site footer -->
+
+<!--        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+
+<!-- All Javascript plugins goes here -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"
+        integrity="sha512-Znnj7n0C0Xz1tdk6ih39WPm3kSCTZEKnX/7WaNbySW7GFbwSjO5r9/uOAGLMbgv6llI1GdghC7xdaQsFUStM1w=="
+        crossorigin="anonymous"></script>
+<!-- All vendor scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.0/jquery.fullPage.min.js"
+        integrity="sha512-bKi+CTaxm8Tk2I5RkQXJUbx9Fg8XV5wtjlPKSEiKSXEEcXLws31cvqbm0fiQXH6YBL0SHk0wVvZ5XHYL6MzpkA=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.2/jquery.slimscroll.min.js"
+        integrity="sha512-LWcvQft4yzgiIor0svkfU1z7IQymLpeF5sR+WL0uCow0AWdIisX5pfdh/ZIAOk48BMPEOFMWWZZ+hK6N0OTkIQ=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"
+        integrity="sha512-NhRZzPdzMOMf005Xmd4JonwPftz4Pe99mRVcFeRDcdCtfjv46zPIi/7ZKScbpHD/V0HB1Eb+ZWigMqw94VUVaw=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.js"
+        integrity="sha512-lYAcY5E6LZVeNB3Pky37SxbYKzo8A68MzKFoPg5oTuolhRm36D+YRvkrAQS4JuKsaGYeJ5KA5taMEtpNlPUeOA=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"
+        integrity="sha512-DaXizW7rneJiM/XOnTQVQ7wDZBVNXf5U9rE88BPYhQcEQ4pjaEZlCX5hgY3+4C3K91jfdpUWbz8t8mL/g1BDTw=="
+        crossorigin="anonymous"></script>
+<script src="js/vendor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
+<!-- Downcount JS -->
+<script src="js/jquery.downCount.js"></script>
+
+<!-- Form script -->
+<script src="js/form_script.js"></script>
+
+<!-- Javascript main files -->
+<script src="js/main.js"></script>
+<script src="js/animated.js"></script>
+
+
+<!-- Google Analytics: Uncomment and change UA-XXXXX-X to be your site"s ID. -->
+<!--<script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src="//www.google-analytics.com/analytics.js";
+        r.parentNode.insertBefore(e,r)}(window,document,"script","ga"));
+        ga("create","UA-XXXXX-X");ga("send","pageview");
+    </script>-->
+</body>
+</html>
