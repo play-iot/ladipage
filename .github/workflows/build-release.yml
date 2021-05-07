@@ -1,0 +1,147 @@
+name: build-release
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened, closed ]
+    branches: [ main, master ]
+  push:
+    branches: [ main, master ]
+    tags:
+      - 'v*'
+
+env:
+  APP_IMAGE: ladipage
+  PLATFORMS: linux/amd64
+  DOCKER_WORKDIR: ./
+  DOCKER_FILE: Dockerfile
+  DOCKER_USERNAME: beeio
+  DOCKER_IMAGE: playio/ladipage
+  GHCR_IMAGE: ghcr.io/play-iot/ladipage
+  TAG_PREFIX: v
+  BRAND_VERION: v2
+  BRAND_REPO: play-iot/brand
+
+jobs:
+
+  context:
+    runs-on: ubuntu-latest
+    outputs:
+      branch: ${{ steps.context.outputs.branch }}
+      shouldBuild: ${{ steps.context.outputs.decision_build }}
+      shouldPublish: ${{ steps.context.outputs.decision_publish }}
+      isRelease: ${{ steps.context.outputs.isTag }}
+      afterRelease: ${{ steps.context.outputs.isAfterMergedReleasePR }}
+      sha: ${{ steps.context.outputs.shortCommitId }}
+      version: ${{ steps.context.outputs.version }}
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.BEEIO_CI_TOKEN }}
+
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v3
+        with:
+          git-user-signingkey: true
+          git-commit-gpgsign: true
+          git-tag-gpgsign: true
+          git-push-gpgsign: false
+          gpg-private-key: ${{ secrets.OSS_GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.OSS_GPG_PASSPHARSE }}
+
+      - name: Project context
+        id: context
+        uses: zero88/gh-project-context@v1
+        with:
+          dry: false
+          mustSign: true
+          tagPrefix: ${{ env.TAG_PREFIX }}
+          releaseBranchPrefix: release/
+          mergedReleaseMsgRegex: "^Merge pull request #[0-9]+ from .+/release/.+$"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: context
+    if: needs.context.outputs.shouldBuild == 'true'
+    services:
+      registry:
+        image: zero88/gh-registry:latest
+        ports:
+          - 5000:5000
+        options: >-
+          -v /home/runner:/var/lib/registry
+          --name registry
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /home/runner/docker
+          key: ${{ runner.os }}-${{ env.APP_IMAGE }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.APP_IMAGE }}-
+
+      - name: Validate cache
+        run: |
+          docker buildx imagetools inspect localhost:5000/${{ env.APP_IMAGE }}:buildcache || echo "Not Found"
+
+      - name: Docker meta
+        id: docker_meta
+        uses: crazy-max/ghaction-docker-meta@v2
+        with:
+          images: ${{ env.GHCR_IMAGE }},${{ env.DOCKER_IMAGE }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        with:
+          driver-opts: network=host
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.BEEIO_CI_TOKEN }}
+
+      - name: Login to Docker Hub Registry
+        uses: docker/login-action@v1
+        with:
+          username: ${{ env.DOCKER_USERNAME }}
+          password: ${{ secrets.BEEIO_CI_DOCKERHUB }}
+
+      - name: Docker build
+        uses: docker/build-push-action@v2
+        with:
+          context: ${{ env.DOCKER_WORKDIR }}
+          file: ${{ env.DOCKER_FILE }}
+          platforms: ${{ env.PLATFORMS }}
+          cache-from: type=registry,ref=localhost:5000/${{ env.APP_IMAGE }}:buildcache
+          cache-to: type=registry,ref=localhost:5000/${{ env.APP_IMAGE }}:buildcache,mode=max
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          pull: true
+          push: true
+
+      - name: Cleanup Docker build cache if any
+        run: |
+          docker buildx imagetools inspect localhost:5000/${{ env.APP_IMAGE }}:buildcache || echo "Not Found"
+          echo "======================================================"
+          docker buildx prune --filter until=72h --keep-storage 3GB -f
+
+      - name: Create Release
+        if: ${{ needs.context.outputs.isRelease == 'true' }}
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.TAG_PREFIX }}${{ needs.context.outputs.version }}
+          name: Release LadiPage v${{ needs.context.outputs.version }}
+          draft: false
+          prerelease: false
