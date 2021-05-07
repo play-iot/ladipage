@@ -1,2 +1,1 @@
-# ladipage
-Landing page
+# Play-iO Landing page
