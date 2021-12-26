@@ -54,7 +54,7 @@ let background = '#ccc';
 let backgroundMask = 'rgba(255,255,255,0.92)';
 let backgroundVideoUrl = 'none';
 
-/* Background image as data attribut */
+/* Background image as data attribute */
 let bgi = $('.bg-img');
 
 for (let i = 0; i < bgi.length; i++) {
@@ -68,8 +68,7 @@ for (let i = 0; i < bgi.length; i++) {
 /* Background color as data attribut */
 let bgc = $('.bg-color');
 for (let i = 0; i < bgc.length; i++) {
-    let src = bgc[i].getAttribute('data-bgcolor');
-    bgc[i].style.backgroundColor = src;
+    bgc[i].style.backgroundColor = bgc[i].getAttribute('data-bgcolor');
 }
 
 /* Background slide show Background letiables  */
@@ -124,7 +123,7 @@ $(document).ready(function () {
     $('.video-container video, .video-container object').maximage('maxcover');
 
     /* Init youtube video background */
-    if (backgroundVideoUrl != 'none') {
+    if (backgroundVideoUrl !== 'none') {
 
         //disable video background for smallscreen
         if ($(window).width() > 640) {

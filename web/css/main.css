@@ -502,10 +502,8 @@ strong,
 
 .header-top.material {
   background: rgba(255, 255, 255, 0.15);
-  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2),
-  0px 0px 2px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2),
-  0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 0 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .header-top > div {
@@ -654,10 +652,8 @@ strong,
   left: 0;
   bottom: 0;
   width: 56px;
-  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2),
-  0px 0px 2px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2),
-  0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 0 2px 0 rgba(0, 0, 0, 0.1);
   z-index: 100;
   background: rgba(0, 0, 0, 0.26);
 }
@@ -875,11 +871,8 @@ strong,
 
 /* 5.1. Page cover background image,color */
 .page-cover .cover-bg {
-  background: url(../img/bg.png);
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: url(../img/bg.png) no-repeat fixed center;
   z-index: -3;
 }
 
@@ -890,10 +883,8 @@ strong,
 
 /* 5.2 Page cover  background mask */
 .page-cover .cover-bg.cover-bg-mask {
-  background: rgba(0, 0, 0, 0.12);
-  background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  background: rgba(0, 0, 0, 0.12) no-repeat fixed;
   z-index: 0;
   -webkit-transition: 2s;
   -ms-transition: 2s;
